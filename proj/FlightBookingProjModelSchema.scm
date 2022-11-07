@@ -134,11 +134,11 @@ typeDefinitions
 		createPassengers() number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:17:25.558;
 		createTestData() number = 1006;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:28:29.350;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:01:42:46.257;
 		createUsers() number = 1001;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:37:30.487;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:02:09:39.760;
 		deleteAllInstances() number = 1004;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:21:02.760;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:00:07:15.973;
 	)
 	Passenger completeDefinition
 	(
@@ -479,6 +479,10 @@ vars
 	
 	hTime : String;
 	mTime : String;
+	
+	ticket : Ticket;
+	passenger : Passenger;
+	ticketDict : TicketById;
 begin
 	beginTransaction;
 	
@@ -560,6 +564,15 @@ begin
 		i := i + 1;
 	endwhile;
 	
+	ticketDict := TicketById.firstInstance();
+	create ticketDict persistent;
+	
+	create passenger persistent;
+	passenger.setPropertiesOnCreate("03/03/1996".Date, 4, "Sugma", "Nuts", "Miss", "5235324", "027485724", "Passenger");
+	create ticket persistent;
+	ticket.setPropertiesOnCreate(passenger, flight, 555, true, false, "memes", 1);
+	ticketDict.add(ticket);
+	
 	
 	commitTransaction;
 end;
@@ -605,11 +618,13 @@ begin
 	FlightPath.instances.purge();
 	Plane.instances.purge();
 	Ticket.instances.purge();
+	Users.instances.purge();
 	AirportByCode.instances.purge();
 	AirportArray.instances.purge();
 	FlightByID.instances.purge();
 	PassengerByID.instances.purge();
 	TicketById.instances.purge();
+	UsersByFirstname.instances.purge();
 	commitTransaction;
 end;
 

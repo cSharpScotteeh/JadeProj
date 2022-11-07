@@ -62,7 +62,7 @@ typeDefinitions
 		getAndValidateUser(
 			usercode: String output; 
 			password: String output): Boolean number = 1001;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:44:29.296;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:01:10:21.662;
 	)
 	GFlightBookingProjViewSchema completeDefinition
 	(
@@ -268,7 +268,7 @@ typeDefinitions
  
 	jadeMethodDefinitions
 		btnBook_click(btn: Button input) updating, number = 1003;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:14:11.682;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:01:50:11.582;
 		btnClose_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:15:33.461;
 		load() updating, number = 1001;
@@ -354,7 +354,7 @@ typeDefinitions
 		btnFlightInfo_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:01:16.066;
 		btnOK_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:42:39.993;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:55:51.150;
  
 	eventMethodMappings
 		btnFlightInfo_click = click of Button;
@@ -515,7 +515,7 @@ typeDefinitions
 			obj: Object; 
 			theRow: Integer; 
 			bcontinue: Boolean io): String updating, number = 1002;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:52:25.226;
+		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:02:09:39.041;
  
 	eventMethodMappings
 		btnApprove_click = click of Button;
@@ -559,7 +559,10 @@ begin
 	endif;
 	return accept;
 end;
-
+//use this form to make user passwords? change user obj to have password, find user by name, check if
+//user.password = txtPassword
+//then can add a register button
+//change scott in passenger to passenger?
 }
 
 	)
@@ -705,17 +708,19 @@ vars
 	passenger : Passenger;
 	flight : Flight;
 	dict : TicketById;
+	ticketLast : Ticket;
 begin
 	beginTransaction;
 	passegerDict := PassengerByID.firstInstance();
 	passenger := passegerDict[2];
 	dict := TicketById.firstInstance();
+	ticketLast := dict.last();
 	if dict = null then
 		create dict persistent;
 	endif;
 	
 	create ticket persistent;
-	ticket.setPropertiesOnCreate(passenger, myFlight, 369.53, true, false, "12F", 2);
+	ticket.setPropertiesOnCreate(passenger, myFlight, 369.53, true, false, "12F", ticketLast.ticketID + 2);
 	
 	dict.add(ticket);
 	
@@ -899,7 +904,7 @@ begin
 	
 	if user.accessLevel = "Staff" then
 		create formMMMA;
-		formMMMA.show();	
+		formMMMA.show();
 	elseif user.accessLevel = "Passenger" then
 		create formMMP;
 		formMMP.show();
