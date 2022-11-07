@@ -1,35 +1,29 @@
-/* JADE COMMAND FILE NAME H:\Year 2 - Semester 2\ITC606 - Jade\JadeProj-main\JadeProj-main\proj\FlightBookingProjViewSchema.jcf */
-jadeVersionNumber "20.0.02";
+﻿jadeVersionNumber "22.0.01";
 schemaDefinition
 FlightBookingProjViewSchema subschemaOf FlightBookingProjModelSchema completeDefinition, patchVersioningEnabled = false;
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.233;
-importedPackageDefinitions
-constantDefinitions
+	setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.233;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.184;
+	setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.184;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:21:17:33;
-libraryDefinitions
+	setModifiedTimeStamp "<unknown>" "" 2022:11:07:17:21:20;
 typeHeaders
 	FlightBookingProjViewSchema subclassOf FlightBookingProjModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2096;
 	GFlightBookingProjViewSchema subclassOf GFlightBookingProjModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2097;
 	SFlightBookingProjViewSchema subclassOf SFlightBookingProjModelSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2098;
 	AddNewPassenger subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2201;
 	EditPassengerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2105;
-	FlightDetailsGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 16, number = 2052;
+	FlightDetailsGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2078;
 	FlightDetailsMember subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 17, number = 2200;
-	FlightListGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2051;
+	FlightListGuest subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2079;
 	FlightListMember subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2205;
 	Login subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2099;
 	MainMenuManagerAndAdmin subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2107;
 	MainMenuPassenger subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2100;
 	PassengerList subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2103;
-	ProcessedTickets subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2050;
-	UnproccessedTickets subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2049;
- 
+	ProcessedTickets subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2080;
+	UnproccessedTickets subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2081;
 membershipDefinitions
- 
 typeDefinitions
 	Object completeDefinition
 	(
@@ -57,7 +51,6 @@ typeDefinitions
 	GFlightBookingProjModelSchema completeDefinition
 	(
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
- 
 	jadeMethodDefinitions
 		getAndValidateUser(
 			usercode: String output; 
@@ -67,6 +60,11 @@ typeDefinitions
 	GFlightBookingProjViewSchema completeDefinition
 	(
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.233;
+	jadeMethodDefinitions
+		getAndValidateUser(
+			usercode: String output; 
+			password: String output): Boolean number = 1001;
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:20:22.109;
 	)
 	WebSession completeDefinition
 	(
@@ -121,13 +119,13 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:20:55.204;
 		txtTitle:                      TextBox  number = 10, ordinal = 10;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:20:55.205;
- 
 	jadeMethodDefinitions
 		btnCancel_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:21:34:02.075;
 		btnOk_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:21:33:54.044;
- 
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:35:26.664;
+		isInputOkay(): Boolean number = 1003;
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:32:47.221;
 	eventMethodMappings
 		btnCancel_click = click of Button;
 		btnOk_click = click of Button;
@@ -166,7 +164,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:17:06:06.808;
 		txtTitle:                      TextBox  number = 5, ordinal = 5;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:17:06:06.806;
- 
 	jadeMethodDefinitions
 		btnCancel_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:42:41.277;
@@ -174,7 +171,6 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:21:31:45.858;
 		load() updating, number = 1003;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:21:37:23.995;
- 
 	eventMethodMappings
 		btnCancel_click = click of Button;
 		btnOk_click = click of Button;
@@ -198,7 +194,7 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.543;
 		flightTimelbl:                 Label  number = 14, ordinal = 14;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.545;
-		myFlight:                      Flight  number = 17, ordinal = 16;
+		myFlight:                      Flight  number = 17, ordinal = 17;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.548;
 		planeLbl:                      Label  number = 13, ordinal = 13;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.545;
@@ -216,13 +212,11 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.542;
 		txtFlightdate:                 TextBox  number = 11, ordinal = 11;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.544;
- 
 	jadeMethodDefinitions
 		btnClose_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.550;
 		load() updating, number = 1001;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:59:38.550;
- 
 	eventMethodMappings
 		btnClose_click = click of Button;
 		load = load of Form;
@@ -265,7 +259,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:05:20.095;
 		txtFlightdate:                 TextBox  number = 6, ordinal = 6;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:05:20.093;
- 
 	jadeMethodDefinitions
 		btnBook_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:01:50:11.582;
@@ -273,7 +266,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:15:33.461;
 		load() updating, number = 1001;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:14:51.235;
- 
 	eventMethodMappings
 		btnBook_click = click of Button;
 		btnClose_click = click of Button;
@@ -287,7 +279,6 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:58:07.607;
 		flightListTable:               Table  number = 2, ordinal = 2;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:58:07.607;
- 
 	jadeMethodDefinitions
 		btnDetails_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:01:05.847;
@@ -299,8 +290,7 @@ typeDefinitions
 			bcontinue: Boolean io): String updating, number = 1001;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:58:07.623;
 		load() updating, number = 1002;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:58:07.623;
- 
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:40:56.713;
 	eventMethodMappings
 		btnDetails_click = click of Button;
 		flightListTable_displayRow = displayRow of Table;
@@ -314,7 +304,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:06:24.797;
 		flightListTable:               Table  number = 1, ordinal = 1;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:06:20:53:12.116;
- 
 	jadeMethodDefinitions
 		btnDetails_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:57:43.646;
@@ -326,8 +315,7 @@ typeDefinitions
 			bcontinue: Boolean io): String updating, number = 1001;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:55:42.350;
 		load() updating, number = 1002;
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:36:37.110;
- 
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:40:48.082;
 	eventMethodMappings
 		btnDetails_click = click of Button;
 		flightListTable_displayRow = displayRow of Table;
@@ -349,20 +337,18 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:00:57:05.083;
 		usernameLabel:                 Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:00:57:05.045;
- 
 	jadeMethodDefinitions
 		btnFlightInfo_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:01:16.066;
 		btnOK_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:55:51.150;
- 
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:22:02.618;
 	eventMethodMappings
 		btnFlightInfo_click = click of Button;
 		btnOK_click = click of Button;
 	)
 	MainMenuManagerAndAdmin completeDefinition
 	(
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:38:55.670;
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:17:27:44.736;
 	referenceDefinitions
 		infoLabel:                     Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:16:45:13.129;
@@ -382,7 +368,6 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:11:46.927;
 		welcomeLabel:                  Label  number = 2, ordinal = 2;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:16:45:13.130;
- 
 	jadeMethodDefinitions
 		load() updating, number = 1003;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:18:10.744;
@@ -394,7 +379,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:16:48:41.052;
 		mnuUnconfirmedBookings_click(menuItem: MenuItem input) updating, number = 1004;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:12:12.526;
- 
 	eventMethodMappings
 		load = load of Form;
 		menuFlightsView_click = click of MenuItem;
@@ -418,7 +402,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:16:58:40.697;
 		welcomeLabel:                  Label  number = 1, ordinal = 1;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:01:04:59.075;
- 
 	jadeMethodDefinitions
 		load() updating, number = 1003;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:17:55.254;
@@ -426,7 +409,6 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:57:25.677;
 		mnuPassengerEdit_click(menuItem: MenuItem input) updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:21:30:21.592;
- 
 	eventMethodMappings
 		load = load of Form;
 		menuFlightsView_click = click of MenuItem;
@@ -442,14 +424,13 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:49:18.629;
 		passengerlistTable:            Table  number = 1, ordinal = 1;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:14:00:30.030;
- 
 	jadeMethodDefinitions
 		btnAdd_click(btn: Button input) updating, number = 1001;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:21:33:13.950;
 		btnEdit_click(btn: Button input) updating, number = 1004;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:51:42.646;
 		load() updating, number = 1002;
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:07:00:35:50.911;
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:39:04.177;
 		passengerlistTable_displayRow(
 			table: Table input; 
 			theSheet: Integer; 
@@ -457,7 +438,6 @@ typeDefinitions
 			theRow: Integer; 
 			bcontinue: Boolean io): String updating, number = 1003;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:06:22:31:16.926;
- 
 	eventMethodMappings
 		btnAdd_click = click of Button;
 		btnEdit_click = click of Button;
@@ -472,12 +452,11 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:35:12.031;
 		tblProcessedTickets:           Table  number = 1, ordinal = 1;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:35:12.031;
- 
 	jadeMethodDefinitions
 		btnExit_click(btn: Button input) updating, number = 1001;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:35:27.281;
 		load() updating, number = 1002;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:36:10.812;
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:39:55.237;
 		tblProcessedTickets_displayRow(
 			table: Table input; 
 			theSheet: Integer; 
@@ -485,7 +464,6 @@ typeDefinitions
 			theRow: Integer; 
 			bcontinue: Boolean io): String updating, number = 1003;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:55:51.709;
- 
 	eventMethodMappings
 		btnExit_click = click of Button;
 		load = load of Form;
@@ -501,14 +479,13 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:16:15.381;
 		tblUnprocessedTickets:         Table  number = 1, ordinal = 1;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:01:27.563;
- 
 	jadeMethodDefinitions
 		btnApprove_click(btn: Button input) updating, number = 1004;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:45:26.761;
 		btnCancelBooking_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:33:46.563;
 		load() updating, number = 1001;
-		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:05:16.701;
+		setModifiedTimeStamp "Rowan" "22.0.01" 2022:11:07:18:40:23.582;
 		tblUnprocessedTickets_displayRow(
 			table: Table input; 
 			theSheet: Integer; 
@@ -516,30 +493,25 @@ typeDefinitions
 			theRow: Integer; 
 			bcontinue: Boolean io): String updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:07:02:09:39.041;
- 
 	eventMethodMappings
 		btnApprove_click = click of Button;
 		btnCancelBooking_click = click of Button;
 		load = load of Form;
 		tblUnprocessedTickets_displayRow = displayRow of Table;
 	)
- 
-inverseDefinitions
 databaseDefinitions
-FlightBookingProjViewSchemaDb
+	FlightBookingProjViewSchemaDb
 	(
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.233;
+	setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:52:46.233;
 	databaseFileDefinitions
 		"flightBooking" number = 54;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
 	defaultFileDefinition "flightBooking";
 	classMapDefinitions
-		SFlightBookingProjViewSchema in "_environ";
 		FlightBookingProjViewSchema in "_usergui";
 		GFlightBookingProjViewSchema in "flightBooking";
+		SFlightBookingProjViewSchema in "_environ";
 	)
-schemaViewDefinitions
-exportedPackageDefinitions
 typeSources
 	GFlightBookingProjModelSchema (
 	jadeMethodSources
@@ -564,7 +536,30 @@ end;
 //then can add a register button
 //change scott in passenger to passenger?
 }
+	)
+	GFlightBookingProjViewSchema (
+	jadeMethodSources
+getAndValidateUser
+{
+getAndValidateUser(usercode: String output; password: String output): Boolean;
 
+vars
+	form : Login;
+	accept : Boolean;
+begin
+	create form transient;
+	form.showModal();
+	accept := form.txtPassword.text.toLower = 'password';
+	if not accept then 
+		app.msgBox('Please enter your password again', 'Access Denied', MsgBox_OK_Only);
+	endif;
+	return accept;
+end;
+//use this form to make user passwords? change user obj to have password, find user by name, check if
+//user.password = txtPassword
+//then can add a register button
+//change scott in passenger to passenger?
+}
 	)
 	AddNewPassenger (
 	jadeMethodSources
@@ -578,9 +573,7 @@ begin
 	self.unloadForm();
 	delete self;
 end;
-
 }
-
 btnOk_click
 {
 btnOk_click(btn: Button input) updating;
@@ -590,6 +583,10 @@ vars
 	passenger : Passenger;
 	passengerLast : Passenger;
 begin
+	if not isInputOkay() then
+		app.msgBox("Please make sure all feilds are full.","Empty fields", MsgBox_OK_Only);
+		return;
+	endif;
 	beginTransaction;
 	dict := PassengerByID.firstInstance();
 	passengerLast := dict.last();
@@ -601,9 +598,31 @@ begin
 	delete self;
 	commitTransaction;
 end;
-
 }
+isInputOkay
+{
+isInputOkay() : Boolean;
 
+vars
+ correct : Boolean;
+begin
+	correct := true;
+	if txtFirstName.text = null then
+		correct := false;
+	elseif txtLastName.text = null then
+		correct := false;
+	elseif txtDOB.text = null then
+		correct := false;
+	elseif txtPassportNumber.text = null then
+		correct := false;
+	elseif txtPhoneNumber.text = null then
+		correct := false;
+	elseif txtTitle.text = null then
+		correct := false;
+	endif;
+	return correct;
+end;
+}
 	)
 	EditPassengerDetails (
 	jadeMethodSources
@@ -617,9 +636,7 @@ begin
 	self.unloadForm();
 	delete self;
 end;
-
 }
-
 btnOk_click
 {
 btnOk_click(btn: Button input) updating;
@@ -637,9 +654,7 @@ begin
 	delete self;
 	commitTransaction;
 end;
-
 }
-
 load
 {
 load() updating;
@@ -656,9 +671,7 @@ begin
 		txtPassportNumber.text := myPassenger.passengerPassportNumber;
 	endif;
 end;
-
 }
-
 	)
 	FlightDetailsGuest (
 	jadeMethodSources
@@ -672,9 +685,7 @@ begin
 	self.unloadForm();
 	delete self;
 end;
-
 }
-
 load
 {
 load() updating;
@@ -692,9 +703,7 @@ begin
 		txtFlightPlane.text := myFlight.plane.planeId.String;
 	endif;
 end;
-
 }
-
 	)
 	FlightDetailsMember (
 	jadeMethodSources
@@ -728,9 +737,7 @@ begin
 	delete self;
 	commitTransaction;
 end;
-
 }
-
 btnClose_click
 {
 btnClose_click(btn: Button input) updating;
@@ -741,9 +748,7 @@ begin
 	self.unloadForm();
 	delete self;
 end;
-
 }
-
 load
 {
 load() updating;
@@ -761,9 +766,7 @@ begin
 		txtFlightPlane.text := myFlight.plane.planeId.String;
 	endif;
 end;
-
 }
-
 	)
 	FlightListGuest (
 	jadeMethodSources
@@ -784,9 +787,7 @@ begin
 	form.show();
 	endif;
 end;
-
 }
-
 flightListTable_displayRow
 {
 flightListTable_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
@@ -801,9 +802,7 @@ begin
 	return flight.flightId.String & Tab & flight.flightPath.departureAirport.cityName & Tab & flight.flightPath.arrivalAirport.cityName;
 	
 end;
-
 }
-
 load
 {
 load() updating;
@@ -812,11 +811,12 @@ vars
 
 begin
 	flightListTable.setCellText(1,1, "Flight ID" & Tab & "Departure Airport" & Tab & "Arrival Airport");
+	if FlightByID.firstInstance = null then
+		return;
+	endif;
 	flightListTable.displayCollection(FlightByID.firstInstance, true, flightListTable.DisplayCollection_Forward, null);
 end;
-
 }
-
 	)
 	FlightListMember (
 	jadeMethodSources
@@ -837,9 +837,7 @@ begin
 	form.show();
 	endif;
 end;
-
 }
-
 flightListTable_displayRow
 {
 flightListTable_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
@@ -854,9 +852,7 @@ begin
 	return flight.flightId.String & Tab & flight.flightPath.departureAirport.cityName & Tab & flight.flightPath.arrivalAirport.cityName;
 	
 end;
-
 }
-
 load
 {
 load() updating;
@@ -865,11 +861,12 @@ vars
 
 begin
 	flightListTable.setCellText(1,1, "Flight ID" & Tab & "Departure Airport" & Tab & "Arrival Airport");
+	if FlightByID.firstInstance = null then
+		return;
+	endif;
 	flightListTable.displayCollection(FlightByID.firstInstance, true, flightListTable.DisplayCollection_Forward, null);
 end;
-
 }
-
 	)
 	Login (
 	jadeMethodSources
@@ -883,9 +880,7 @@ begin
 	create form transient;
 	form.show();
 end;
-
 }
-
 btnOK_click
 {
 btnOK_click(btn: Button input) updating;
@@ -897,23 +892,35 @@ vars
 	input : String;
 	user : Users;
 begin
-	dict := UsersByFirstname.firstInstance();
-	input := txtUsername.text.toLower();
-	user := dict.getAtKeyGeq(input);
-	
-	
-	if user.accessLevel = "Staff" then
-		create formMMMA;
-		formMMMA.show();
-	elseif user.accessLevel = "Passenger" then
-		create formMMP;
-		formMMP.show();
+	if txtUsername.text = null then
+		txtUsername.setFocus();
+		app.msgBox("Please Enter a Name", "Needs Name", MsgBox_OK_Only);
+		return;
+	elseif txtPassword.text = null then
+		txtPassword.setFocus();
+		app.msgBox("Please Enter a Password", "Needs Password", MsgBox_OK_Only);
+		return;
 	endif;
-	self.unloadForm();
+	
+	if not UsersByFirstname.firstInstance() = null then
+		dict := UsersByFirstname.firstInstance();
+		input := txtUsername.text.toLower();
+		if dict.includesKey(input) then
+			user := dict.getAtKeyGeq(input);
+			if user.accessLevel = "Staff" then
+				create formMMMA;
+				formMMMA.show();
+			elseif user.accessLevel = "Passenger" then
+				create formMMP;
+				formMMP.show();
+			endif;
+			self.unloadForm();
+		else
+			app.msgBox("Passenger name not recognized", "Invalid Name", MsgBox_OK_Only);
+		endif;
+	endif;
 end;
-
 }
-
 	)
 	MainMenuManagerAndAdmin (
 	jadeMethodSources
@@ -926,9 +933,7 @@ vars
 begin
 	app.mdiFrame := MainMenuManagerAndAdmin;
 end;
-
 }
-
 menuFlightsView_click
 {
 menuFlightsView_click(menuItem: MenuItem input) updating;
@@ -939,9 +944,7 @@ begin
 	create form transient;
 	form.show();
 end;
-
 }
-
 mnuConfirmedTickets_click
 {
 mnuConfirmedTickets_click(menuItem: MenuItem input) updating;
@@ -953,7 +956,6 @@ begin
 	form.show();
 end;
 }
-
 mnuPassengersList_click
 {
 mnuPassengersList_click(menuItem: MenuItem input) updating;
@@ -964,9 +966,7 @@ begin
 	create form transient;
 	form.show();
 end;
-
 }
-
 mnuUnconfirmedBookings_click
 {
 mnuUnconfirmedBookings_click(menuItem: MenuItem input) updating;
@@ -977,9 +977,7 @@ begin
 	create form transient;
 	form.show();
 end;
-
 }
-
 	)
 	MainMenuPassenger (
 	jadeMethodSources
@@ -992,9 +990,7 @@ vars
 begin
 	app.mdiFrame := MainMenuPassenger;
 end;
-
 }
-
 menuFlightsView_click
 {
 menuFlightsView_click(menuItem: MenuItem input) updating;
@@ -1005,9 +1001,7 @@ begin
 	create form transient;
 	form.show();
 end;
-
 }
-
 mnuPassengerEdit_click
 {
 mnuPassengerEdit_click(menuItem: MenuItem input) updating;
@@ -1023,9 +1017,7 @@ begin
 	form.myPassenger := passenger;
 	form.show();
 end;
-
 }
-
 	)
 	PassengerList (
 	jadeMethodSources
@@ -1040,9 +1032,7 @@ begin
 	create form;
 	form.show;
 end;
-
 }
-
 btnEdit_click
 {
 btnEdit_click(btn: Button input) updating;
@@ -1060,9 +1050,7 @@ begin
 	form.show();
 	endif;
 end;
-
 }
-
 load
 {
 load() updating;
@@ -1071,12 +1059,13 @@ vars
 
 begin
 	passengerlistTable.setCellText(1,1,"ID" & Tab & "Last Name" & Tab & "First Name");
+	if PassengerByID.firstInstance = null then
+		return;
+	endif;
 	passengerlistTable.displayCollection(PassengerByID.firstInstance,true, passengerlistTable.DisplayCollection_Forward, null);
 
 end;
-
 }
-
 passengerlistTable_displayRow
 {
 passengerlistTable_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
@@ -1087,9 +1076,7 @@ begin
 	passenger := obj.Passenger;
 	return passenger.passengerId.String & Tab & passenger.passengerLastName & Tab & passenger.passengerFirstName;
 end;
-
 }
-
 	)
 	ProcessedTickets (
 	jadeMethodSources
@@ -1103,9 +1090,7 @@ begin
 	self.unloadForm();
 	delete self;
 end;
-
 }
-
 load
 {
 load() updating;
@@ -1115,12 +1100,13 @@ vars
 begin
 	tblProcessedTickets.setCellText(1,1, "Ticket ID" & Tab & "Flight ID" & Tab & "Departure Airport"
 		& Tab & "Arrival Airport" & Tab & "Passenger ID" & Tab & "Passenger Name");
+	if TicketById.firstInstance = null then
+		return;
+	endif;
 		tblProcessedTickets.displayCollection(TicketById.firstInstance, true,
 			tblProcessedTickets.DisplayCollection_Forward, null);
 end;
-
 }
-
 tblProcessedTickets_displayRow
 {
 tblProcessedTickets_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
@@ -1138,9 +1124,7 @@ begin
 		& Tab & ticket.myPassenger.passengerId.String & Tab & ticket.myPassenger.passengerFirstName;
 	endif;
 end;
-
 }
-
 	)
 	UnproccessedTickets (
 	jadeMethodSources
@@ -1160,9 +1144,7 @@ begin
 	ticket.setPaid();
 	app.msgBox("Ticked Approved","Notice", MsgBox_OK_Only);
 end;
-
 }
-
 btnCancelBooking_click
 {
 btnCancelBooking_click(btn: Button input) updating;
@@ -1179,9 +1161,7 @@ begin
 	app.msgBox("Ticket Cancelled","Notice", MsgBox_OK_Only);
 	dict.remove(ticket);
 end;
-
 }
-
 load
 {
 load() updating;
@@ -1191,12 +1171,13 @@ vars
 begin
 	tblUnprocessedTickets.setCellText(1,1, "Ticket ID" & Tab & "Flight ID" & Tab & "Departure Airport"
 		& Tab & "Arrival Airport" & Tab & "Passenger ID" & Tab & "Passenger Name");
+	if TicketById.firstInstance = null then
+		return;
+	endif;
 		tblUnprocessedTickets.displayCollection(TicketById.firstInstance, true,
 			tblUnprocessedTickets.DisplayCollection_Forward, null);
 end;
-
 }
-
 tblUnprocessedTickets_displayRow
 {
 tblUnprocessedTickets_displayRow(table: Table input; theSheet: Integer; obj: Object; theRow: Integer; bcontinue: Boolean io):String updating;
@@ -1216,7 +1197,5 @@ begin
 	endif;
 	commitTransaction;
 end;
-
 }
-
 	)

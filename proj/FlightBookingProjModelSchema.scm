@@ -1,16 +1,12 @@
-/* JADE COMMAND FILE NAME H:\Year 2 - Semester 2\ITC606 - Jade\JadeProj-main\JadeProj-main\proj\FlightBookingProjModelSchema.jcf */
-jadeVersionNumber "20.0.02";
+﻿jadeVersionNumber "22.0.01";
 schemaDefinition
 FlightBookingProjModelSchema subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
-importedPackageDefinitions
-constantDefinitions
+	setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.581;
+	setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.581;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2022:11:06:21:17:18;
-libraryDefinitions
+	setModifiedTimeStamp "<unknown>" "" 2022:11:07:17:20:52;
 typeHeaders
 	Airport subclassOf Object highestOrdinal = 3, number = 2092;
 	FlightBookingProjModelSchema subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2087;
@@ -20,25 +16,23 @@ typeHeaders
 	Passenger subclassOf Object highestOrdinal = 9, number = 2091;
 	Plane subclassOf Object highestOrdinal = 4, number = 2090;
 	Ticket subclassOf Object highestOrdinal = 11, number = 2095;
-	Users subclassOf Object highestOrdinal = 2, number = 2054;
+	Users subclassOf Object highestOrdinal = 2, number = 2075;
 	SFlightBookingProjModelSchema subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	AirportByCode subclassOf MemberKeyDictionary loadFactor = 66, number = 2110;
 	FlightByID subclassOf MemberKeyDictionary loadFactor = 66, number = 2111;
 	PassengerByID subclassOf MemberKeyDictionary loadFactor = 66, number = 2106;
-	PlaneByID subclassOf MemberKeyDictionary loadFactor = 66, number = 2109;
+	PlaneByID subclassOf MemberKeyDictionary loadFactor = 66, number = 2076;
 	TicketById subclassOf MemberKeyDictionary loadFactor = 66, number = 2199;
-	UsersByFirstname subclassOf MemberKeyDictionary loadFactor = 66, number = 2055;
+	UsersByFirstname subclassOf MemberKeyDictionary loadFactor = 66, number = 2077;
 	AirportArray subclassOf Array number = 2206;
- 
 membershipDefinitions
-	AirportByCode of Airport ;
-	FlightByID of Flight ;
-	PassengerByID of Passenger ;
-	PlaneByID of Plane ;
-	TicketById of Ticket ;
-	UsersByFirstname of Users ;
-	AirportArray of Airport ;
- 
+	AirportByCode of Airport;
+	FlightByID of Flight;
+	PassengerByID of Passenger;
+	PlaneByID of Plane;
+	TicketById of Ticket;
+	UsersByFirstname of Users;
+	AirportArray of Airport;
 typeDefinitions
 	Object completeDefinition
 	(
@@ -53,7 +47,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:26:02.982;
 		cityName:                      String[31] readonly, number = 2, ordinal = 2;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:25:53.901;
- 
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pAirportCode: String; 
@@ -88,7 +81,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:18:44:21.265;
 		plane:                         Plane  readonly, number = 4, ordinal = 8;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:18:43:46.090;
- 
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pflightDate: Date; 
@@ -110,7 +102,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:18:46:00.343;
 		departureAirport:              Airport  readonly, number = 3, ordinal = 5;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:18:46:19.374;
- 
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pArrivalAirport: Airport; 
@@ -129,7 +120,6 @@ typeDefinitions
 	)
 	JadeScript completeDefinition
 	(
- 
 	jadeMethodDefinitions
 		createPassengers() number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:17:25.558;
@@ -160,7 +150,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:45:36.030;
 		passengerType:                 String[31] readonly, number = 6, ordinal = 6;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:46:52.275;
- 
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pDOB: Date; 
@@ -191,7 +180,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:23:56.535;
 		type:                          String[31] readonly, number = 1, ordinal = 1;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:23:24.697;
- 
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pPlaneID: Integer; 
@@ -220,7 +208,6 @@ typeDefinitions
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:31:15:25:54.534;
 		passenger:                     Passenger  readonly, number = 2, ordinal = 8;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:18:46:54.154;
- 
 	jadeMethodDefinitions
 		setPaid() updating, number = 1002;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:22:45:25.558;
@@ -242,7 +229,6 @@ typeDefinitions
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:31:10.709;
 		firstName:                     String[31] readonly, number = 1, ordinal = 1;
 		setModifiedTimeStamp "2013004474" "20.0.02" 2022:11:06:23:30:57.865;
- 
 	jadeMethodDefinitions
 		setPropertiesOnCreate(
 			pFirstname: String; 
@@ -312,7 +298,6 @@ typeDefinitions
 	(
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:11:06:21:13:25.065;
 	)
- 
 memberKeyDefinitions
 	AirportByCode completeDefinition
 	(
@@ -338,37 +323,33 @@ memberKeyDefinitions
 	(
 		firstName;
 	)
- 
-inverseDefinitions
 databaseDefinitions
-FlightBookingProjModelSchemaDb
+	FlightBookingProjModelSchemaDb
 	(
-		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
+	setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
 	databaseFileDefinitions
 		"flightBooking" number = 54;
 		setModifiedTimeStamp "The Razorback" "20.0.02" 2022:10:30:11:21:26.731;
 	defaultFileDefinition "flightBooking";
 	classMapDefinitions
-		SFlightBookingProjModelSchema in "_environ";
-		FlightBookingProjModelSchema in "_usergui";
-		GFlightBookingProjModelSchema in "flightBooking";
-		Plane in "flightBooking";
 		Airport in "flightBooking";
-		FlightPath in "flightBooking";
-		Flight in "flightBooking";
-		Passenger in "flightBooking";
-		Ticket in "flightBooking";
-		PassengerByID in "flightBooking";
-		PlaneByID in "flightBooking";
-		AirportByCode in "flightBooking";
-		FlightByID in "flightBooking";
-		TicketById in "flightBooking";
 		AirportArray in "flightBooking";
+		AirportByCode in "flightBooking";
+		Flight in "flightBooking";
+		FlightBookingProjModelSchema in "_usergui";
+		FlightByID in "flightBooking";
+		FlightPath in "flightBooking";
+		GFlightBookingProjModelSchema in "flightBooking";
+		Passenger in "flightBooking";
+		PassengerByID in "flightBooking";
+		Plane in "flightBooking";
+		PlaneByID in "flightBooking";
+		SFlightBookingProjModelSchema in "_environ";
+		Ticket in "flightBooking";
+		TicketById in "flightBooking";
 		Users in "flightBooking";
 		UsersByFirstname in "flightBooking";
 	)
-schemaViewDefinitions
-exportedPackageDefinitions
 typeSources
 	Airport (
 	jadeMethodSources
@@ -383,9 +364,7 @@ begin
 	self.cityCode := pCityCode;
 	self.cityName := pCityName;
 end;
-
 }
-
 	)
 	Flight (
 	jadeMethodSources
@@ -404,9 +383,7 @@ begin
 	self.plane := pPlane;
 	self.flightId := pId;
 end;
-
 }
-
 	)
 	FlightPath (
 	jadeMethodSources
@@ -420,9 +397,7 @@ begin
 	self.arrivalAirport := pArrivalAirport;
 	self.departureAirport := pDepartureAirport;
 end;
-
 }
-
 	)
 	JadeScript (
 	jadeMethodSources
@@ -455,9 +430,7 @@ begin
 	
 	commitTransaction;
 end;
-
 }
-
 createTestData
 {
 createTestData();
@@ -576,9 +549,7 @@ begin
 	
 	commitTransaction;
 end;
-
 }
-
 createUsers
 {
 createUsers();
@@ -601,9 +572,7 @@ begin
 	
 	commitTransaction;
 end;
-
 }
-
 deleteAllInstances
 {
 deleteAllInstances();
@@ -627,9 +596,7 @@ begin
 	UsersByFirstname.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 	)
 	Passenger (
 	jadeMethodSources
@@ -652,9 +619,7 @@ begin
 	//Type is passenger or staff member (flight attendant)
 	
 end;
-
 }
-
 setPropertiesOnUpdate
 {
 setPropertiesOnUpdate(pFirstName : String; pLastName : String;
@@ -670,9 +635,7 @@ begin
 	self.passengerTitle := pTitle;
 	self.passengerType := pType;
 end;
-
 }
-
 	)
 	Plane (
 	jadeMethodSources
@@ -687,9 +650,7 @@ begin
 	self.seatCount := pSeatCount;
 	self.type := pType;
 end;
-
 }
-
 	)
 	Ticket (
 	jadeMethodSources
@@ -702,9 +663,7 @@ vars
 begin
 	self.paymentStatus := true;
 end;
-
 }
-
 setPropertiesOnCreate
 {
 setPropertiesOnCreate(pPassenger : Passenger; pFlight : Flight; pPrice : Decimal; pBaggage : Boolean;
@@ -721,9 +680,7 @@ begin
 	self.seatNumber := pSeatNumber;
 	self.ticketID := pTicketID;
 end;
-
 }
-
 	)
 	Users (
 	jadeMethodSources
@@ -737,7 +694,5 @@ begin
 	self.firstName := pFirstname;
 	self.accessLevel := pAccessLevel;
 end;
-
 }
-
 	)
